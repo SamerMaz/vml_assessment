@@ -1,12 +1,12 @@
 # VML ASSESSMENT
-
- * web app that captures users data through a form and.
+/*
+ * web app that captures users data through a form.
  * It includes fields for first name, last name, email, phone number, and comment.
  * The form validates the input and displays error messages if necessary.
  * When the form is submitted, it sends the data to the server and displays a success message.
  */
 
-Built with React, Next.js, Tailwind CSS, and Google reCAPTCHA v3.
+Built with React, Next.js(pages router),Typescript, Tailwind CSS, and Google reCAPTCHA v3.
 
 
 ## Features
@@ -27,8 +27,8 @@ Before you begin, ensure you have met the following requirements:
 ## Environment Variables
 The .env.local file should be on the root level and should contain the following variables:
 
-NEXT_PUBLIC_RECAPTCHA_KEY: This is the public reCAPTCHA key, used on the client-side to interact with the reCAPTCHA service.
-RECAPTCHA_SECRET_KEY: This is the secret reCAPTCHA key, used on the server-side to verify the reCAPTCHA response.
+**NEXT_PUBLIC_RECAPTCHA_KEY**: This is the public reCAPTCHA key, used on the client-side to interact with the reCAPTCHA service.
+**RECAPTCHA_SECRET_KEY**: This is the secret reCAPTCHA key, used on the server-side to verify the reCAPTCHA response.
 Getting your reCAPTCHA keys
 To get your reCAPTCHA keys, you need to register your site with the reCAPTCHA service. Here are the steps:
 
