@@ -19,12 +19,24 @@ const Form = () => {
   const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [loading, setLoading] = useState(false);
 
+  const [message, setMessage] = useState("");
+
   const { executeRecaptcha } = useReCaptcha();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    let { name, value } = e.target;
+
+    // Enforce '+' at the start for the phone number field and trim spaces after '+'
+    if (name === "phoneNumber") {
+      if (!value.startsWith("+")) {
+        value = `+${value}`;
+      }
+      value = value.replace(/\+ /g, "+");
+    }
+
+    setForm({ ...form, [name]: value });
   };
 
   const validateForm = () => {
@@ -58,6 +70,7 @@ const Form = () => {
       const data = await submitFormData(formValues);
       alert(`Form submitted successfully ${JSON.stringify(data)}`);
       setLoading(false);
+      setMessage("");
       setForm(initialFormValues);
       return data;
     } catch (error) {
@@ -77,7 +90,8 @@ const Form = () => {
     const recaptchaToken = await executeRecaptcha("recaptchaSubmit");
 
     const response = await recaptchaPost(form, recaptchaToken);
-    console.log(response);
+
+    setMessage(JSON.stringify(response?.message).replace(/"/g, ""));
 
     await submitForm(form);
   };
@@ -141,6 +155,7 @@ const Form = () => {
             onChange={handleChange}
             error={formErrors.phoneNumber}
             onBlur={handleBlur}
+            placeholder="+123 456 7890"
           />
           <Input
             label="Comment"
@@ -151,8 +166,11 @@ const Form = () => {
             error={formErrors.comment}
             onBlur={handleBlur}
           />
-          <div className="mt-3">
+          <div className="mt-3 flex space-x-3 ">
             <Button type="submit" name="Submit" disable={loading} />
+            {message && (
+              <p className="text-center text-green-500 mt-3">{message}</p>
+            )}
           </div>
         </form>
       </div>

@@ -4,6 +4,7 @@ import ErrorMessage from "../error-message";
 type InputProps = {
   label: string;
   name: string;
+  placeholder?: string;
   type?: string;
   value: string;
   onChange: (
@@ -20,6 +21,7 @@ type InputProps = {
 
 const Input = ({
   label,
+  placeholder,
   name,
   type,
   value,
@@ -51,6 +53,7 @@ const Input = ({
         <input
           type={type}
           name={name}
+          placeholder={placeholder}
           autoComplete="on"
           id={name}
           value={value}

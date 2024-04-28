@@ -43,7 +43,7 @@ export default async function handler(
     if (!data.success) {
       return res.status(400).json({ message: "Failed reCAPTCHA verification" });
     }
-    res.status(200).json({ message: "Form submitted successfully" });
+    res.status(200).json({ message: "Recaptcha Verified Successfully" });
   } catch (error) {
     return res
       .status(500)

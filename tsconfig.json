@@ -17,6 +17,12 @@
       "@components/*": ["./src/components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "jest.setup.ts",
+    "__tests__/**/*"
+  ],
   "exclude": ["node_modules"]
 }
