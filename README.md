@@ -1,40 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# VML ASSESSMENT
 
-## Getting Started
+ * web app that captures users data through a form and.
+ * It includes fields for first name, last name, email, phone number, and comment.
+ * The form validates the input and displays error messages if necessary.
+ * When the form is submitted, it sends the data to the server and displays a success message.
+ */
 
-First, run the development server:
+Built with React, Next.js, Tailwind CSS, and Google reCAPTCHA v3.
 
+
+## Features
+
+- Responsive web application with form validation
+- Integration with Google reCAPTCHA v3 for bot protection
+- Submission to a mock API endpoint for demonstration purposes
+
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js version 18 or higher
+- npm/yarn installed
+
+
+## Environment Variables
+The .env.local file should be on the root level and should contain the following variables:
+
+NEXT_PUBLIC_RECAPTCHA_KEY: This is the public reCAPTCHA key, used on the client-side to interact with the reCAPTCHA service.
+RECAPTCHA_SECRET_KEY: This is the secret reCAPTCHA key, used on the server-side to verify the reCAPTCHA response.
+Getting your reCAPTCHA keys
+To get your reCAPTCHA keys, you need to register your site with the reCAPTCHA service. Here are the steps:
+
+Go to the reCAPTCHA website: [https://www.google.com/recaptcha/about/](https://www.google.com/recaptcha/about/)
+Click on the 'Admin console' button in the upper right corner.
+Log in with your Google account if you're not already logged in.
+Go to v3 'admin console'
+fill the form
+Click on the 'Submit' button.
+After registering, you'll be taken to a page with your site details. Here, you'll find your site key (public key) and secret key.
+Copy these keys and paste them into your .env.local file, like so:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_RECAPTCHA_KEY=your-public-key
+RECAPTCHA_SECRET_KEY=your-secret-key
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Installation
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Clone the repository: 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+git clone https://github.com/SamerMaz/vml_assessment.git
+cd your-project-name
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Testing
+```bash
+npm test 
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
