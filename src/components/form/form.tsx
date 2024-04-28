@@ -118,7 +118,7 @@ const Form = () => {
   };
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center max-w-md mx-auto p-4">
       <div className="w-full sm:max-w-md md:max-w-lg max-w-lg px-4 py-6 mx-auto border border-gray-300 rounded-lg shadow-lg">
         <h1 className="text-center text-3xl font-bold my-6">Form</h1>
         <form onSubmit={handleSubmit} className="space-y-0">
