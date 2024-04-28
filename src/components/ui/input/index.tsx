@@ -44,13 +44,14 @@ const Input = ({
           value={value}
           onChange={onChange}
           className={inputClassName}
-          rows={4}
+          rows={3}
           onBlur={onBlur}
         />
       ) : (
         <input
           type={type}
           name={name}
+          autoComplete="on"
           id={name}
           value={value}
           onChange={onChange}
